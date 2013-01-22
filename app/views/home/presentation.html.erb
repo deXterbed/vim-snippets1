@@ -1,0 +1,631 @@
+<body class="impress-not-supported">
+  <div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+  <div id="impress">
+    <div id="bored" class="step slide" data-x="-1000" data-y="-1500">
+      <q style="margin-top:250px;margin-left:200px"><b>VIM-SNIPPETS</b></q>
+    </div> 
+
+    <div class="step slide" data-x="0" data-y="-1500" data-rotate="120">
+      <q>vimrc</q><br />
+      <p>You probably got tired of typing commands that you use very often.</p>
+      <p>To start Vim with all your favorite option settings and mappings, you write them in
+         what is called the 'vimrc' file. Vim executes the commands in this file when it starts up.</p>
+     </div>
+
+     <div class="step slide" data-x="1000" data-y="-1500" data-rotate="90">
+       <h2><b>Basic vimrc setup</b></h2>
+       <table>
+         <tr>
+           <td class="option">:syntax on</td><td class="description">Turn on syntax highlighting</td>
+         </tr>
+         <tr>
+           <td class="option">:set laststatus=2</td><td class="description">Always show status line</td>
+         </tr>
+         <tr>
+           <td class="option">:set autowrite</td><td class="description">Automatically write a file when leaving a modified buffer</td>
+         </tr>
+         <tr>
+           <td class="option">:set confirm</td><td class="description">Start a dialog when a command fails (here when quit command fails)</td>
+         </tr>
+         <tr>
+           <td class="option">:set tabstop=2</td><td class="description">Number of spaces a TAB in the text stands for</td>
+         </tr>
+         <tr>
+           <td class="option">:set shiftwidth=2</td><td class="description">Number of spaces used for each step of (auto)indent</td>
+         </tr>
+       </table>
+     </div>
+     <div class="step slide" data-x="1000" data-y="0" data-rotate="180">
+       <table>
+         <tr>
+           <td class="option">:set hlsearch</td><td class="description">Have vim highlight the target of a search</td>
+         </tr>
+         <tr>
+           <td class="option">:set incsearch</td><td class="description">Do incremental searching</td>
+         </tr>
+         <tr>
+           <td class="option">:set ruler</td><td class="description">Show the cursor position all the time</td>
+         </tr>
+         <tr>
+           <td class="option">:set number</td><td class="description">Show line numbers</td>
+         </tr>
+         <tr>
+           <td class="option">:set ignorecase</td><td class="description">Ignore case when searching</td>
+         </tr>
+         <tr>
+           <td class="option">:set title</td><td class="description">Show info in the window title</td>
+         </tr>
+         <tr>
+           <td class="option">:set wrapmargin=4</td><td class="description">Margin from the right in which to break a line. Set this value to 4 or 5</td>
+         </tr>
+       </table>
+     </div>
+     <div class="step slide" data-x="1000" data-y="1500">
+       <table>
+         <tr>
+           <td class="option">:set textwidth=70</td><td class="description">Line length above which to break a line</td>
+         </tr>
+         <tr>
+           <td class="option">:set expandtab</td><td class="description">Converting tabs to spaces</td>
+         </tr>
+         <tr>
+           <td class="option">:set paste</td><td class="description">Copy pasting contents</td>
+         </tr>
+       </table>
+     </div>
+     <div class="step slide" data-x="2000" data-y="1500" data-rotate="90">
+       <h3><b>Wrap a long line</b></h3>
+       <p>Use (gq) to wrap the highlighted peice of text</p><br />
+       <h3><strong>Auto-Complete</strong></h3>
+       <p>Start typing the variable/function names and then (Ctrl-n) or (Ctrl-p) next and previous</p><br />
+       <h3><strong>Delete</strong></h3>
+       <p>delete character (x) <br />
+         delete word (dw)  <br />
+         delete line (dd) <br />
+       </p><br />
+       <h3><strong>Auto-Indent</strong></h3>
+       <p>line (==) <br />
+         entire document (gg=G)</p>
+     </div>
+     <div class="step slide" data-x="3000" data-y="1500" data-z="2000">
+       <h3><strong>Find/Replace</strong></h3><br />
+       <p class="small_text">%s/oldword/newword/g OR %s#oldword#newword#g <br />
+         %s/oldword/newword/gc OR %s#oldword#newword#gc</p><br />
+       <h3><b>Split Windows</b></h3>
+       <p class="small_text">Horizontal Windows :split <br />
+         Vertical Windows :vs <br />
+       Shifting between Windows (Ctrl-shift-ww)</p>
+     </div>
+     <div class="step slide" data-x="3000" data-y="2500" data-z="2500">
+       <q><b>Methods of automatic indentation</b></q><br />
+       <ul>
+         <li>autoindent</li>
+         <li>smartindent</li>
+         <li>cindent</li>
+       </ul>
+     </div>
+     <div class="step slide" data-x="3000" data-y="3500" data-z="3000">
+      <q><b>File type based indentation</b></q> <br />   
+      <ul>
+        <li>Most flexible</li><br />
+        <li>Allows users to customize indentation per file type</li><br />
+        <li>Competent indentation scripts for Ruby, Perl and many other languages and file types</li><br />
+      </ul>
+     </div>
+     <div class="step slide" data-x="3000" data-y="4500" data-z="3500">
+       <q><b>Different settings for different file types</b></q><br />
+       <p><b>filetype plugin indent on</b></p><br />
+       <p>Create file html.vim with contents:</p><br />
+       <p class="small_text"><b>setlocal shiftwidth=2 <br />
+       setlocal tabstop=2</b></p>
+     </div>
+     <div class="step slide" data-x="3000" data-y="5500" data-z="4500">
+       <p>Create another file python.vim with contents:</p><br />
+       <p class="small_text"><b>setlocal expandtab <br />
+           setlocal shiftwidth=4 <br />
+           setlocal softtabstop=4 <br />
+       </b></p><br />
+       <p>The html.vim and python.vim files should be in this directory :</p><br />
+       <p class="small_text">~/.vim/after/ftplugin</p><br />
+       <p>It is possible to put commands such as the following in your vimrc as an alternative</p><br />
+       <p class="small_text">    autocmd FileType html setlocal shiftwidth=2 tabstop=2 <br />
+           autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4</p>
+     </div>
+     <div class="step slide" data-x="1500" data-y="5500" data-z="3500" data-rotate="-90">
+       <q><b>Defining abbreviations</b></q><br />
+       <p>Use the :abbreviate command to define abbreviations.</p><br />
+       <p class="small_text">:ab #d #define <br />
+         :ab #i #include</p><br />
+       <p>Defining abbreviations to draw comments</p><br />
+       <p class="small_text">:ab #b /********************************************************<br />
+         :ab #e ********************************************************/<br />
+       :ab #l /*------------------------------------------------------*/</p>
+     </div>
+     <div class="step slide" data-x="500" data-y="5500" data-z="2500" data-rotate="-90">
+       <h3><b>Vim has two main modes</b></h3><br />
+       <ul>
+         <li>normal</li>
+         <li>insert</li>
+       </ul><br />
+       <p>How you enter insert mode that offers some advantage:</p>
+       <table>
+         <tr>
+           <td class="option">i</td><td class="description">insert before character under cursor</td>
+         </tr>
+         <tr>
+           <td class="option">a</td><td class="description">insert after cursor</td>
+         </tr>
+         <tr>
+           <td class="option">I</td><td class="description">insert at beginning of current line</td>
+         </tr>
+         <tr>
+           <td class="option">A</td><td class="description">insert at end of the line</td>
+         </tr>
+         <tr>
+           <td class="option">o</td><td class="description">starts insert mode in a new line below current one</td>
+         </tr>
+         <tr>
+           <td class="option">O</td><td class="description">insert in a new line above current one</td>
+         </tr>
+       </table>
+     </div>
+
+     <div class="step slide" data-x="-1500" data-y="5500" data-z="2500" data-rotate="-180">
+       <table>
+         <tr>
+           <td class="option">ciw</td><td class="description">change word under cursor</td>
+         </tr>
+         <tr>
+           <td class="option">ci"</td><td class="description">change double-quoted string (but keep the quotes)</td>
+         </tr>
+         <tr>
+           <td class="option">ci(</td><td class="description">change text between matching parentheses, also works with brackets</td>
+         </tr>
+         <tr>
+           <td class="option">cc</td><td class="description">change whole line</td>
+         </tr>
+
+       </table>
+
+     </div>
+     <div class="step slide" data-x="-2500" data-y="5500" data-z="2500">
+       <h3><b>Knowing where you want to go</b></h3><br />
+       <table>
+       <tr>
+         <td class="doption">/</td><td class="poption">?</td><td class="description">search for a pattern of text, jump to it by hitting Enter (<CR>)</td>
+       </tr>
+       <tr>
+         <td class="doption">*</td><td class="poption">#</td><td class="description">search for the word under cursor</td>
+       </tr>
+       <tr>
+         <td class="doption">n</td><td class="poption">N</td><td class="description">jump to the next match for the previous search</td>
+       </tr>
+       <tr>
+         <td class="doption">$</td><td class="poption">^</td><td class="description">position cursor at end of current line</td>
+       </tr>
+       <tr>
+         <td class="doption">f</td><td class="poption">F</td><td class="description">position cursor on the character in the same line that matches the next keystroke</td>
+       </tr>
+       </table>
+     </div>
+     <div class="step slide" data-x="-3500" data-y="5500" data-z="2500">
+       <table>
+       <tr>
+         <td class="doption">t</td><td class="poption">T</td><td class="description">position cursor before the next character that matches the keystroke</td>
+       </tr>
+       <tr>
+         <td class="doption">;</td><td class="poption">,</td><td class="description">repeat the last f, F, t, or T</td>
+       </tr>
+       <tr>
+         <td class="doption">w</td><td class="poption">b</td><td class="description">move to start of next word</td>
+       </tr>
+
+       <tr>
+         <td class="doption">W</td><td class="poption">B</td><td class="description">move to start of next "WORD" (sequence of non-blank characters)</td>
+       </tr>
+       <tr>
+         <td class="doption">}</td><td class="poption">{</td><td class="description">move down one paragraph (block of text separated by blank lines)</td>
+       </tr>
+     </table>
+   </div>
+     <div class="step slide" data-x="-4500" data-y="5500" data-z="2500">
+   <table>
+       <tr>
+         <td class="option">gg</td><td class="description">jump to first line of document</td>
+       </tr>
+       <tr>
+         <td class="option">G</td><td class="description">jump to end of document</td>
+       </tr>
+       </table>
+     </div>
+      
+     <div class="step slide" data-x="-5500" data-y="5500" data-z="2500">
+
+       <h3><b>Yanking: copy & paste</b></h3><br />
+       <table>
+
+       <tr>
+         <td class="option">Y</td><td class="description">yank current line; prepend with number to yank that many lines</td>
+       </tr>
+       <tr>
+         <td class="option">y}</td><td class="description">yank until end of paragraph</td>
+       </tr>
+       <tr>
+         <td class="option">dd</td><td class="description">delete current line and yank it too (think "cut")</td>
+       </tr>
+       <tr>
+         <td class="option">d3d</td><td class="description">delete 3 lines starting from current one</td>
+       </tr>
+       <tr>
+         <td class="option">p</td><td class="description">paste yanked text at cursor; prepend number to paste that many times</td>
+       </tr>
+       <tr>
+         <td class="option">P</td><td class="description">paste before cursor</td>
+       </tr>
+     </table>
+   </div>
+     <div class="step slide" data-x="-6500" data-y="5500" data-z="2500">
+       <h3><b>Vim Registers</b></h3><br />
+
+       <p class="medium_text">You can even save yanked text into a named register of your choosing to ensure it is never overwritten and paste it later from that register if you need to paste it multiple times in different spots</p><br />
+
+       <p>Commands for selecting registers start with ":</p>
+       <table>
+
+       <tr>
+         <td class="option">"aY</td><td class="description">yank current line into register "a"</td>
+       </tr>
+       <tr>
+         <td class="option">"ap</td><td class="description">paste from register "a"</td>
+       </tr>
+       <tr>
+         <td class="option">"*Y</td><td class="description">yank line into special register "*" which is the system clipboard</td>
+       </tr>
+       <tr>
+         <td class="option">"*p</td><td class="description">paste from register "*": the system clipboard</td>
+       </tr>
+       <tr>
+         <td class="option">"_D</td><td class="description">delete from cursor until the end of line, but don't yank</td>
+       </tr>
+     </table>
+     </div>
+     <div class="step slide" data-x="-7500" data-y="5500" data-z="2500">
+       <q><b>Quickly navigate files</b></q><br />
+       <h3><b>buffers</b></h3><br />
+       <table>
+       <tr>
+         <td class="option">:bp</td><td class="description">Previous Buffer</td>
+       </tr>
+       <tr>
+         <td class="option">:bn</td><td class="description">Next Buffer</td>
+       </tr>
+       <tr>
+         <td class="option">:bd</td><td class="description">Delete current buffer</td>
+       </tr>
+       <tr>
+         <td class="option">:e</td><td class="description">interactively explore the file structure
+           starting with current directory</td>
+       </tr>
+     </table>
+     </div>
+     <div class="step slide" data-x="-8500" data-y="5500" data-z="2500">
+       <h2><b>ctags</b></h2><br />
+       <p>generating ctags</p><br />
+       <p class="small_text">ctags -R --languages=ruby --exclude=.git</p><br />
+       <p>navigation</p><br />
+       <table>
+       <tr>
+         <td class="option">:tag foo</td><td class="description">jump to tag under cursor</td>
+       </tr>
+       <tr>
+         <td class="option">:tjump foo</td><td class="description">choose from a list of matching tags</td>
+       </tr>
+     </table>
+   </div>
+     <div class="step slide" data-x="-9500" data-y="5500" data-z="3000" data-rotate="90">
+       <q>VIM PLUGINS</q>
+       <h3><b>Pathogen</b></h3><br />
+       <p>Manage your 'runtimepath' with ease. </p><br />
+       <p>In practical terms, pathogen.vim makes it super easy to install plugins and runtime files in their own private directories.</p><br />
+       <p>Add this to your vimrc:</p><br />
+       <p>    call pathogen#infect()<br />
+         syntax on <br />
+         filetype plugin indent on</p>
+     </div>
+     <div class="step slide" data-x="-10500" data-y="5500" data-z="3000" data-rotate="90">
+       <q><b>Installation</b></q><br />
+       <p>mkdir -p ~/.vim/autoload ~/.vim/bundle <br /><br />
+         curl -Sso ~/.vim/autoload/pathogen.vim \ <br />
+         https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim</p>
+    </div>
+    <div class="step slide" data-x="-11500" data-y="5500" data-z="3000" data-rotate="90">
+
+       <q><b>VIM-SNIPPETS</b></q><br />
+       <p><b>Installation</b></p><br />
+       <p><b>git clone git://github.com/garbas/vim-snipmate.git</b></p><br />
+       <p>--aims to be a concise vim script that implements some of TextMate's snippets features in Vim</p><br />
+    </div>
+    <div class="step slide" data-x="-12500" data-y="5500" data-z="3000" data-rotate="90">
+       <q>Dependencies:</q><br />
+       <p>git clone https://github.com/tomtom/tlib_vim.git </p>
+       <p >--provides some utility functions for vim</p><br />
+       <p>git clone https://github.com/MarcWeber/vim-addon-mw-utils.git</p><br />
+       <p>git clone https://github.com/railsfreak/snipmate-snippets.git</p><br />
+       <p>--This repository contains snippets files for various programming languages.</p>
+     </div>
+    <div class="step slide" data-x="-13500" data-y="5500" data-z="3000" data-rotate="90">
+
+       <h3><b>Lets see what it does</b></h3><br />
+       <p>create a new file with .rb extension anywhere in your file structure</p><br />
+       <p>open with vim</p><br />
+       <p>now try something like</p><br />
+       <table>
+
+       <tr>
+         <td class="option">def <%=h('<Tab>') %></td><td class="option">lam<%=h('<Tab>') %></td>
+       </tr>
+       <tr>
+         <td class="option">defp<%=h('<Tab>') %></td><td class="option">b<%=h('<Tab>') %></td>
+       </tr>
+       <tr>
+         <td class="option"><%=h('<Tab>') %></td><td class="option">begin<%=h('<Tab>') %></td>
+       </tr>
+       <tr>
+         <td class="option">f<%=h('<Tab>') %></td><td class="option">defcreate<%=h('<Tab>') %></td>
+       </tr>
+     </table>
+     </div>
+     <div class="step slide" data-x="-14500" data-y="5500" data-z="3000" data-rotate="90">
+       <table>
+       <tr>
+         <td class="option">ife<%=h('<Tab>') %></td><td class="option">defdestroy<%=h('<Tab>') %></td>
+       </tr>
+       <tr>
+         <td class="option">r<%=h('<Tab>') %></td><td class="option">defindex<%=h('<Tab>') %></td>
+       </tr>
+       <tr>
+         <td class="option">w<%=h('<Tab>') %></td><td class="option">flash</td>
+       </tr>
+       <tr>
+         <td class="option">ea<%=h('<Tab>') %></td><td class="option">flashe</td>
+       </tr>
+     </table>
+     </div>
+     <div class="step slide" data-x="-15500" data-y="5500" data-z="3000" data-rotate="90">
+       <h3><b>HTML Snippets</b></h3><br />
+       <table>
+       <tr>
+         <td class="option">doct5<Tab></td><td class="option">input:text</td>
+       </tr>
+       <tr>
+         <td class="option">html<Tab></td><td class="option">input:submit</td>
+       </tr>
+       <tr>
+         <td class="option">.<Tab></td><td class="option">input:radio</td>
+       </tr>
+       <tr>
+         <td class="option">article</td><td class="option">table</td>
+       </tr>
+       <tr>
+         <td class="option">body</td><td class="option">tr</td>
+       </tr>
+       <tr>
+         <td class="option">head</td><td class="option">td</td>
+       </tr>
+       <tr>
+         <td class="option">button</td><td class="option">ul</td>
+       </tr>
+       <tr>
+         <td class="option">button.</td><td class="option">button#</td>
+       </tr>
+       <tr>
+         <td class="option">button:s</td><td class="option">img</td>
+       </tr>
+       <tr>
+         <td class="option">colgroup</td><td class="option">div</td>
+       </tr>
+     </table>     
+   </div>
+   <div class="step slide" data-x="-16500" data-y="5500" data-z="3000" data-rotate="90">
+     <table>
+
+       <tr>
+         <td class="option">div.</td><td class="option">div#</td>
+       </tr>
+       <tr>
+         <td class="option">form</td><td class="option">h1</td>
+       </tr>
+      </table>
+    </div>
+   <div class="step slide" data-x="-17500" data-y="5500" data-z="3000" data-rotate="90">
+
+     <h3><b>erb snippets</b></h3><br />
+     <table>
+       <tr>
+         <td class="option">%</td><td class="option">=</td>
+       </tr>
+       <tr>
+         <td class="option">ead</td><td class="option">for</td>
+       </tr>
+       <tr>
+         <td class="option">rpl</td><td class="option">rpc</td>
+       </tr>
+       <tr>
+         <td class="option">yield</td><td class="option">ff</td>
+       </tr>
+       <tr>
+         <td class="option">ft</td><td class="option">ffe</td>
+       </tr>
+       <tr>
+         <td class="option">fftf</td><td class="option">ffta</td>
+       </tr>
+       <tr>
+         <td class="option">jsit</td><td class="option">lip</td>
+       </tr>
+       <tr>
+         <td class="option">sslt</td><td class="option"></td>
+       </tr>
+     </table>
+    </div>
+   <div class="step slide" data-x="-18500" data-y="5500" data-z="3000" data-rotate="90">
+
+     <h3><b>css snippets</b></h3>
+     <table>
+       <tr>
+         <td class="option">.<Tab></td><td class="option">!</td>
+       </tr>
+       <tr>
+         <td class="option">bg+</td><td class="option">bgc</td>
+       </tr>
+       <tr>
+         <td class="option">bgi</td><td class="option">bd+</td>
+       </tr>
+       <tr>
+         <td class="option">f+</td><td class="option">ff:s</td>
+       </tr>
+       <tr>
+         <td class="option">fw</td><td class="option">h</td>
+       </tr>
+       <tr>
+         <td class="option">m</td><td class="option">m:4</td>
+       </tr>
+       <tr>
+         <td class="option">p</td><td class="option">p:4</td>
+       </tr>
+       <tr>
+         <td class="option">pos:a</td><td class="option">pos:f</td>
+       </tr>
+       <tr>
+         <td class="option">ta:l</td><td class="option">ta:r</td>
+       </tr>
+       <tr>
+         <td class="option">ta:c</td><td class="option">va:b</td>
+       </tr>
+       <tr>
+         <td class="option">va:ti</td><td class="option">v</td>
+       </tr>
+     </table>
+      </div>
+     <div class="step slide" data-x="-19500" data-y="5500" data-z="3000" data-rotate="90">
+
+       <h3><b>Jquery Snippets</b></h3><br />
+       <table>
+       <tr>
+         <td class="option">addClass</td><td class="option">ajax</td>
+       </tr>
+       <tr>
+         <td class="option">ajaxcomplete</td><td class="option">ajaxerror</td>
+       </tr>
+       <tr>
+         <td class="option">ajaxsuccess</td><td class="option">ajaxget</td>
+       </tr>
+       <tr>
+         <td class="option">ajaxpost</td><td class="option">append</td>
+       </tr>
+       <tr>
+         <td class="option">bind</td><td class="option">unbind</td>
+       </tr>
+       <tr>
+         <td class="option">blur</td><td class="option">children</td>
+       </tr>
+       <tr>
+         <td class="option">click</td><td class="option">dblclick</td>
+       </tr>
+       <tr>
+         <td class="option">css</td><td class="option">html</td>
+       </tr>
+       <tr>
+         <td class="option">kpress</td><td class="option">kdown</td>
+       </tr>
+       <tr>
+         <td class="option">toarr</td><td class="option">togclass</td>
+       </tr>
+     </table>
+   </div>
+   <div class="step slide" data-x="-20500" data-y="5500" data-z="3000" data-rotate="90">
+
+       <h3><b>Basically works on the priciple of filetype plugin</b></h3><br />
+
+       <p>The plugin automatically loads the relevant snippets depending on your file extension</p><br />
+       <p>Works with most of the file types that we use everyday</p>
+
+       <ul>
+         <li>c</li>
+         <li>cpp</li>
+         <li>erb</li>
+         <li>rhtml</li>
+         <li>haml</li>
+         <li>coffee</li>
+         <li>javascript</li>
+         <li>jquery</li>
+         <li>java</li>
+         <li>jsp</li>
+         <li>html</li>
+         <li>css</li>
+       </ul>
+     </div>
+   <div class="step slide" data-x="-21500" data-y="5500" data-z="3000" data-rotate="180">
+
+       <q><b>How to add your own snippet</b></q><br />
+       <ul>
+         <li>fork the snipmate-snippets project</li><br />
+         <li>clone the forked project like earlier to your .vim/bundle</li><br />
+         <li>start modifying</li><br />
+         <li>keep your repo updated with git commit</li><br />
+       </ul>
+    </div>
+   <div class="step slide" data-x="-22500" data-y="5500" data-z="3000" data-rotate="180">
+
+       <h3><b>Sample Snippet</b></h3><br />
+       <p>lets add some of our own ruby snippets:</p><br />
+       <p>goto ~/.vim/bundle/snipmate-snippets/snippets/</p><br />
+       <p>open "ruby.snippets"</p><br />
+
+       <p>just type snip<Tab></p><br />
+       <p>now complete it like this</p>
+       <p class="small_text">snippet foo <br />
+         def foo(${1:parameter1}, ${2:parameter2}) <br />
+         ${3} <br />
+         end 
+       </p><br />
+
+     </div>
+
+   <div class="step slide" data-x="-23500" data-y="5500" data-z="3000" data-rotate="180">
+
+       <q>Using two snippet files with just one extension</q>
+       <p>suppose we want to program in jruby, and we want to reuse the snippets already defined for ruby files</p><br />
+       <p>first create a new file named 'jruby.snippets' in  ~/.vim/bundle/snipmate-snippets/snippets</p><br />
+    </div>
+   <div class="step slide" data-x="-24500" data-y="5500" data-z="3000" data-rotate="180">
+     <p><b>Add to your vimrc:</b></p><br />
+       let g:snipMate = {}<br />
+       let g:snipMate.scope_aliases = {}<br />
+       let g:snipMate.scope_aliases['ruby'] = 'ruby,jruby'<br />
+       <br /><br />
+
+       <p class="small_text"></p>
+       <p>So now we can start programming in jruby with ruby snippets still available to us <br />
+         + <br />          
+         We can add jruby specific snippets to our jruby.snippets</p>
+      </div>
+   <div class="step slide" data-x="-25500" data-y="5500" data-z="4000" data-rotate="270">
+
+       <q>THAT'S ALL FOLKS :)</q>
+       <p>HAPPY CODING !!</p>
+     </table>
+   </div>
+   </div>
+ </div>
+ <%= javascript_include_tag "impress" %>
+ <script type="text/javascript">
+   impress().init();    
+   var api = impress();
+   if ("ontouchstart" in document.documentElement) { 
+     document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+   }
+ </script>
+ </body>
